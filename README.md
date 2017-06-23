@@ -13,10 +13,11 @@ npm start
 lat : Latitude in degrees (required)  
 lon : Longitude in degrees (required)  
 alt : Altitude in meters (required)  
-hdg : Heading in degrees (optional)  
-pit : Pitch in degrees (optional)  
-rol : Roll in degrees (optional)  
+hdg : Heading in degrees (optional, defaults to 0.0)  
+pit : Pitch in degrees (optional, defaults to -90.0)  
+rol : Roll in degrees (optional, defaults to 0.0)  
 
+### Example
 ```
 http://localhost:8080/?lat=32.71&lon=-117.16&alt=5000&hdg=0.0&pit=-90.0&rol=0.0
 ```
