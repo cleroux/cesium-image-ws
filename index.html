@@ -96,9 +96,9 @@
 					viewer.camera.setView({
 						destination: Cesium.Cartesian3.fromDegrees(longitude, latitude, altitude),
 						orientation: {
-								heading : heading,
-								pitch : pitch,
-								roll : roll
+								heading : Cesium.Math.toRadians(heading),
+								pitch : Cesium.Math.toRadians(pitch),
+								roll : Cesium.Math.toRadians(roll)
 						}
 					});
 
