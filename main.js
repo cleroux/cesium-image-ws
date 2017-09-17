@@ -11,8 +11,8 @@ with Same Origin Policy when accessing our Cesium Web Service from other
 applications.
 */
 webapp.use(function(request, response, next) {
-	response.header("Access-Control-Allow-Origin", "*");
-	response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	response.header('Access-Control-Allow-Origin', '*');
+	response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 	next();
 });
 
@@ -70,19 +70,19 @@ webapp.get('/', function(request, response, next) {
 	The resulting string will look like: "getImg(32.71,-117.16,5000,1.4861,-0.17453,0.0);"
 	*/
 	var script = [];
-	script.push("getImg(");
+	script.push('getImg(');
 	script.push(latitude);
-	script.push(",");
+	script.push(',');
 	script.push(longitude);
-	script.push(",");
+	script.push(',');
 	script.push(altitude);
-	script.push(",");
+	script.push(',');
 	script.push(heading);
-	script.push(",");
+	script.push(',');
 	script.push(pitch);
-	script.push(",");
+	script.push(',');
 	script.push(roll);
-	script.push(");");
+	script.push(');');
 
 	/*
 	Use Electron's executeJavaScript() function to call getImg() in index.html.
@@ -93,7 +93,7 @@ webapp.get('/', function(request, response, next) {
 	mainWindow.webContents.executeJavaScript(script.join(''))
 		.then((result) => {
 			// Extract the base64 image data and convert it to an image buffer.
-			var img = new Buffer(result.split(",")[1], 'base64');
+			var img = new Buffer(result.split(',')[1], 'base64');
 
 			// Set HTTP Response Headers
 			response.writeHead(200, {
@@ -137,6 +137,6 @@ app.on('ready', function() {
 	interface from localhost to 0.0.0.0.
 	*/
 	var server = webapp.listen(8080, 'localhost', function() {
-		console.log("Cesium Web Service listening at http://localhost:8080/");
+		console.log('Cesium Web Service listening at http://localhost:8080/');
 	});
 });
