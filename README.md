@@ -1,6 +1,6 @@
 # Cesium Web Service
 
-Provides a HTTP Web Service that allows a client to set the Cesium camera position and orientation and returns the resulting canvas image as PNG.
+Provides a HTTP Web Service that allows a client to set the Cesium camera position and orientation and returns the resulting canvas image as PNG. Allows any application to leverage Cesium functionality through HTTP. Intended for single-client use only.
 
 ## Install dependencies and launch the web service
 ```shell
