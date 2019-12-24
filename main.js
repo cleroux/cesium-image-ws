@@ -93,7 +93,7 @@ webapp.get('/', function(request, response, next) {
 	mainWindow.webContents.executeJavaScript(script.join(''))
 		.then((result) => {
 			// Extract the base64 image data and convert it to an image buffer.
-			var img = new Buffer(result.split(',')[1], 'base64');
+			var img = new Buffer.from(result.split(',')[1], 'base64');
 
 			// Set HTTP Response Headers
 			response.writeHead(200, {
